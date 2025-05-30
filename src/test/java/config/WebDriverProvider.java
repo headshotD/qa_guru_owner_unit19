@@ -9,9 +9,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.util.function.Supplier;
 
+import static com.codeborne.selenide.Browsers.CHROME;
+import static com.codeborne.selenide.Browsers.FIREFOX;
+
 public class WebDriverProvider implements Supplier<WebDriver> {
-    private static final String CHROME = "chrome";
-    private static final String FIREFOX = "firefox";
 
     private final WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
