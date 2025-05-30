@@ -15,7 +15,9 @@ public class WebDriverProvider implements Supplier<WebDriver> {
 
     private final WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
+
     public WebDriver get() {
+
         if (config.isRemote()) {
             return createRemoteWebDriver();
         } else {

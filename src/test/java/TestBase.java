@@ -1,11 +1,18 @@
 import config.WebDriverProvider;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
 public class TestBase {
-    private final WebDriver driver = new WebDriverProvider().get();
+    protected WebDriver driver;
+
+    @BeforeEach
+    void setUp() {
+        driver = new WebDriverProvider().get();
+    }
+
     @AfterEach
-    void driverQuit() {
+    void tearDown() {
         if (driver != null) {
             driver.quit();
         }

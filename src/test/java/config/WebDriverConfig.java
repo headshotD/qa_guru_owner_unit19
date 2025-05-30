@@ -11,8 +11,8 @@ import java.net.URL;
 public interface WebDriverConfig extends Config {
 
     @Key("browser")
-    @DefaultValue("CHROME")
-    Browser getBrowser();
+    @DefaultValue("chrome")
+    String getBrowser();
 
     @Key("version")
     @DefaultValue("127.0")
